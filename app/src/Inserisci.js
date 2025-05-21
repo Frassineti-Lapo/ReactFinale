@@ -5,7 +5,7 @@ export default function Inserisci(props) {
     const [nome, setNome] = useState("");
     const [cognome, setCognome] = useState("");
     const caricaAlunni = props.caricaAlunni
-    // funzione post 
+     
     async function salvaAlunno() {
         await fetch("http://localhost:8080/alunni", {
             method: "POST", 
@@ -16,7 +16,7 @@ export default function Inserisci(props) {
     }
 
     return (
-        //gestisco il form per aggiungere dati.
+       
         <div>
             {!scelta ?(
                 <button onClick={() => {setScelta(true)}}>Inserisci</button>

@@ -4,11 +4,10 @@ import { useState } from 'react';
 import Alunni from './Riga';
 import Inserisci from './Inserisci';
 function App() {
-  const [alunni, setAlunni ] = useState([]) //mi serve per prendere i dati dal json
+  const [alunni, setAlunni ] = useState([]) 
   const [loading, setLoading] = useState(false);
   async function caricaAlunni(){
     setLoading(true);
-    // chiamata ad un backend
     
     const response = await fetch("http://localhost:8080/alunni",{method:"GET"});
     const data = await response.json();
