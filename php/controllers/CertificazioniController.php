@@ -4,7 +4,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 class CertificazioniController{
 
-    //funzione non rischiesta ma mi serve per dei controlli
     public function all(Request $request, Response $response, $args){
         $mysqli_connection = new MySQLi('my_mariadb', 'root', 'ciccio', 'scuola');
         $result = $mysqli_connection->query("SELECT c.* FROM certificazioni c ");

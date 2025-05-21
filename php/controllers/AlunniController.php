@@ -4,7 +4,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 class AlunniController
 {
-  //visualizzo tutti gli alunni
+ 
   public function index(Request $request, Response $response, $args){
     $mysqli_connection = new MySQLi('my_mariadb', 'root', 'ciccio', 'scuola');
     $result = $mysqli_connection->query("SELECT * FROM alunni");
@@ -13,7 +13,7 @@ class AlunniController
     $response->getBody()->write(json_encode($results));
     return $response->withHeader("Content-type", "application/json")->withStatus(200);
   }
-  //visualizzo solo un alunno tramite l'id
+  
   public function getOne(Request $request, Response $response, $args){
     $id = $args['id'];
     $mysqli_connection = new MySQLi('my_mariadb', 'root', 'ciccio', 'scuola');
@@ -23,7 +23,7 @@ class AlunniController
     $response->getBody()->write(json_encode($results));
     return $response->withHeader("Content-type", "application/json")->withStatus(200);
   }
-//creo un alunno
+
   public function create(Request $request, Response $response, $args){
     $con = new MySQli('my_mariadb', 'root', 'ciccio', 'scuola');
     $body = json_decode($request->getBody()->getContents(), true);
